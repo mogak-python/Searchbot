@@ -1,7 +1,7 @@
 from slacker import Slacker
-import config
-token=config.BOT_USER_OAUTH_ACCESS_TOKEN['token']
-slack = Slacker('<your-slack-api-token-goes-here>')
+from Searchbot import config
 
-# Send a message to #general channel
-slack.chat.post_message('#general', 'Hello fellow slackers!')
+token = config.BOT_USER_OAUTH_ACCESS_TOKEN['token']
+slack = Slacker(token)
+
+slack.chat.post_message('#bots_test', 'Hello!')
